@@ -7,7 +7,7 @@ interface AppState {
 export class App extends React.Component<{}, AppState> {
   state: AppState = {
     pressedKey: '',
-  }
+  };
 
   componentDidMount(): void {
     document.addEventListener('keyup', this.handleKeyPress);
@@ -19,9 +19,9 @@ export class App extends React.Component<{}, AppState> {
 
   handleKeyPress = (event: KeyboardEvent) => {
     this.setState({
-      pressedKey: event.key
+      pressedKey: event.key,
     });
-  }
+  };
 
   render() {
     const { pressedKey } = this.state;
@@ -31,10 +31,11 @@ export class App extends React.Component<{}, AppState> {
         <p className="App__message">
           {pressedKey === ''
             ? 'Nothing was pressed yet'
-            : `The last pressed key is [${pressedKey === ' ' ? 'Space' : pressedKey}]`
-          }
+            : `The last pressed key is [${
+                pressedKey === ' ' ? 'Space' : pressedKey
+              }]`}
         </p>
       </div>
-    )
+    );
   }
 }
