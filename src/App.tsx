@@ -32,7 +32,9 @@ export class App extends React.Component<{}, AppState> {
           {pressedKey === ''
             ? 'Nothing was pressed yet'
             : `The last pressed key is [${
-                pressedKey === ' ' ? 'Space' : pressedKey
+                pressedKey === ' '
+                  ? 'Space'
+                  : pressedKey
               }]`}
         </p>
       </div>
